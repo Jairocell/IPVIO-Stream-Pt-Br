@@ -70,6 +70,7 @@ Update in der App: „Die Signatur konnte nicht geprüft werden“ stoppt das Up
 fun loadWishboxTexts() {
     I18nCore.load(DictW)
     I18nCore.loadColumn(I18nCore.CODES.indexOf("nl"), DictNlW)
+    I18nCore.loadColumn(I18nCore.CODES.indexOf("pt"), DictPtW)
 }
 
 // Dutch column for the rows above
@@ -95,4 +96,40 @@ Zurück schließt das Menü¦Terug sluit het menu
 Aus „Zuletzt gesehen“ entfernt¦Verwijderd uit „Onlangs bekeken“
 Erwachsenen-Inhalte nie auf den Startseiten¦Inhoud voor volwassenen nooit op de startpagina’s
 Zeigt Titel und Sender für Erwachsene nie in den Reihen der Startseiten (Start, Filme, Serien), auch nicht unter „Zuletzt geschaut“ oder „Weiter schauen“. In Live TV, in den Kategorien und in der Suche bleiben sie erreichbar.¦Toont titels en zenders voor volwassenen nooit in de rijen van de startpagina’s (Start, Films, Series), ook niet onder „Onlangs bekeken“ of „Verder kijken“. In live-tv, in de categorieën en bij zoeken blijven ze bereikbaar.
+"""
+// Portuguese (Brazil) column for the rows above
+val DictPtW = """
+Filme und Serien direkt zu den Kategorien¦Filmes e séries direto para as categorias
+„Filme“ und „Serien“ im Menü öffnen sofort die Kategorien statt der Startseite des Bereichs. Zurück führt zur Startseite des Bereichs.¦"Filmes" e "Séries" no menu abrem as categorias imediatamente em vez da página inicial da seção. Voltar leva à página inicial da seção.
+Was ist neu¦Novidades
+Version¦Versão
+Filme und Serien: auf Wunsch direkt zu den Kategorien (Einstellungen > Allgemein)¦Filmes e séries: opcionalmente direto para as categorias (Configurações > Geral)
+Player: Untertitel- und Ton-Verzögerung im Menü einstellbar¦Player: atraso de legendas e áudio ajustável no menu
+Player: das Menü schließt sich nur noch mit Zurück¦Player: o menu agora só fecha com Voltar
+Live TV: OK gedrückt halten entfernt einen Sender aus „Zuletzt gesehen“¦TV ao vivo: segurar OK remove um canal de "Vistos recentemente"
+Jugendschutz: Inhalte für Erwachsene auf Wunsch nie auf den Startseiten¦Controle parental: conteúdo adulto opcionalmente nunca nas páginas iniciais
+Untertitel-Verzögerung¦Atraso de legendas
+Ton-Verzögerung¦Atraso de áudio
+Später¦Mais tarde
+Früher¦Mais cedo
+Aktuell¦Atual
+Zurücksetzen¦Redefinir
+Gilt nur für diesen Titel. Später = der Text erscheint später.¦Válido apenas para este título. Mais tarde = o texto aparece depois.
+Später = der Ton kommt später als das Bild. Gilt für alle Titel auf diesem Gerät.¦Mais tarde = o som chega depois da imagem. Válido para todos os títulos neste dispositivo.
+Zurück schließt das Menü¦Voltar fecha o menu
+Aus „Zuletzt gesehen“ entfernt¦Removido de "Vistos recentemente"
+Erwachsenen-Inhalte nie auf den Startseiten¦Nunca mostrar conteúdo adulto nas páginas iniciais
+Zeigt Titel und Sender für Erwachsene nie in den Reihen der Startseiten (Start, Filme, Serien), auch nicht unter „Zuletzt geschaut“ oder „Weiter schauen“. In Live TV, in den Kategorien und in der Suche bleiben sie erreichbar.¦Nunca mostra títulos e canais para adultos nas fileiras das páginas iniciais (Início, Filmes, Séries), nem em "Vistos recentemente" ou "Continuar assistindo". Eles continuam disponíveis na TV ao vivo, nas categorias e na busca.
+Handy: neue Einstellungen über das Zahnrad oben – Playlists, Kategorien sortieren und ausblenden, Jugendschutz, Sprache¦Celular: novas configurações na engrenagem no topo – playlists, ordenar e ocultar categorias, controle parental, idioma
+Handy: neuer Reiter „Sport“ mit den Spielen von heute, deinen Lieblingsteams und „Meine Liste“; Spiele direkt am Fernseher starten¦Celular: nova aba "Esportes" com os jogos de hoje, seus times favoritos e "Minha lista"; inicie os jogos direto na TV
+Filme und Serien: Kategorien mit Hoch/Runter verschieben, das Menü bleibt offen, neu „Ans Ende verschieben“¦Filmes e séries: mova categorias com Cima/Baixo, o menu continua aberto, novo "Mover para o fim"
+Playlist wechseln geht schneller: die gespeicherte Liste wird gelesen statt neu heruntergeladen¦Trocar de playlist está mais rápido: a lista salva é lida em vez de baixada novamente
+Bildformat: Hinweis, wenn das Bild schon das Format des Fernsehers hat¦Formato de imagem: aviso quando a imagem já está no formato da TV
+Playlist wechseln zeigt nicht mehr „Noch keine Sender“¦Trocar de playlist não mostra mais "Nenhum canal ainda"
+Live TV: Links springt zur gewählten Kategorie, Rechts öffnet die Senderliste¦TV ao vivo: Esquerda vai para a categoria selecionada, Direita abre a lista de canais
+Player: „Zuschneiden“ und „Strecken“ wirken wieder¦Player: "Cortar" e "Esticar" voltaram a funcionar
+Einstellungen: Meldungen unter den Knöpfen sind sofort zu sehen¦Configurações: mensagens abaixo dos botões ficam visíveis imediatamente
+WLAN-Übertragung: der Fokus bleibt nach Start und Stopp auf dem Knopf¦Transferência Wi-Fi: o foco permanece no botão após iniciar e parar
+„Was ist neu“ erscheint auch nach einer Test-Version¦"Novidades" também aparece após uma versão de teste
+Update in der App: „Die Signatur konnte nicht geprüft werden“ stoppt das Update nicht mehr¦Atualização no app: "Não foi possível verificar a assinatura" não interrompe mais a atualização
 """
