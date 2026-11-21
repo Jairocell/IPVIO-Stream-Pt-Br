@@ -15,7 +15,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.TextUnit
 import java.util.Locale
 
-/** UI language. "" in the settings = device language (not supported → English). */
+/** Idioma da interface: padrão fixo em Português (Brasil) ("pt"). */
 object Lang {
     private var loaded = false
 
@@ -27,27 +27,29 @@ object Lang {
         I18nCore.loadColumn(I18nCore.CODES.indexOf("pt"), DictPt)
     }
 
-    /** Index in I18nCore.CODES. Reads the state so texts are redrawn on switching. */
+    /** Índice em I18nCore.CODES. Se vazio nas configurações, força "pt" (Português). */
     val index: Int
         get() {
             ensureLoaded()
             val c = General.lang
-            return if (c.isBlank()) I18nCore.indexForSystem(Locale.getDefault().language) else I18nCore.CODES.indexOf(c).coerceAtLeast(0)
+            val target = if (c.isBlank()) "pt" else c
+            return I18nCore.CODES.indexOf(target).coerceAtLeast(0)
         }
 
     fun code(): String = I18nCore.CODES[index]
 
     fun locale(): Locale = when (code()) {
+        "pt" -> Locale.Builder().setLanguage("pt").setRegion("BR").build()
         "bs" -> Locale.Builder().setLanguage("bs").setRegion("BA").build()
         "hr" -> Locale.Builder().setLanguage("hr").setRegion("HR").build()
         "sr" -> Locale.Builder().setLanguage("sr").setScript("Latn").setRegion("RS").build()
         else -> Locale.forLanguageTag(code())
     }
 
-    /** Language code for TMDB requests, e.g. "de-DE". */
+    /** Código de idioma para requisições TMDB (sinopses, capas e elenco em português). */
     fun tmdb(): String = when (code()) {
-        "en" -> "en-US"; "tr" -> "tr-TR"; "bs" -> "bs-BA"; "hr" -> "hr-HR"; "sr" -> "sr-RS"
-        "es" -> "es-ES"; "fr" -> "fr-FR"; "it" -> "it-IT"; "nl" -> "nl-NL"; "pt" -> "pt-BR"; else -> "de-DE"
+        "pt" -> "pt-BR"; "en" -> "en-US"; "tr" -> "tr-TR"; "bs" -> "bs-BA"; "hr" -> "hr-HR"
+        "sr" -> "sr-RS"; "es" -> "es-ES"; "fr" -> "fr-FR"; "it" -> "it-IT"; "nl" -> "nl-NL"; else -> "pt-BR"
     }
 
     fun tr(s: String): String {
